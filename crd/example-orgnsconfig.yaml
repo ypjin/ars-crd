@@ -1,0 +1,28 @@
+apiVersion: axway.com/v1
+kind: OrgNamespaceConfiguration
+metadata:
+  name: default-orgnsconfig
+spec:
+  config: |-
+    namespace:
+      metadata:
+        annotations:
+          scheduler.alpha.kubernetes.io/node-selector: ars-chart-deployment-tenant=true
+          scheduler.alpha.kubernetes.io/defaultTolerations: '[{"key": "ars-node-type","value":"tenant", "effect": "NoExecute"}]'
+    resourcequota:
+      pods: 20
+      resourcequotas: 1
+      persistentvolumeclaims: 0
+      services: 10
+      services_loadbalancers: 0
+      services_nodeports: 0
+      configmaps: 10
+      replicationcontrollers: 0
+      secrets: 10
+      requests_ephemeral_storage: 10Gi
+      limits_ephemeral_storage: 10Gi
+      requests_cpu: 15m
+      requests_memory: 128Mi
+      limits_cpu: 200m
+      limits_memory: 500Mi
+
