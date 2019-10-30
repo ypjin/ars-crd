@@ -5,20 +5,31 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"ars-proto/pkg/apis/OrgNamespaceConfiguration"
+	orgnsconf "ars-crd/pkg/apis/OrgNamespaceConfiguration"
 )
 
 // GroupVersion is the identifier for the API which includes
 // the name of the group and the version of the API
 var SchemeGroupVersion = schema.GroupVersion{
-	Group:   OrgNamespaceConfiguration.GroupName,
+	Group:   orgnsconf.GroupName,
 	Version: "v1",
 }
 
 // create a SchemeBuilder which uses functions to add types to
 // the scheme
-var AddToScheme = runtime.NewSchemeBuilder(addKnownTypes).AddToScheme
+var (
+	// SchemeBuilder initializes a scheme builder
+	SchemeBuilder = runtime.NewSchemeBuilder(addKnownTypes)
+	// AddToScheme is a global function that registers this API group & version to a scheme
+	AddToScheme = SchemeBuilder.AddToScheme
+)
 
+// Kind takes an unqualified kind and returns back a Group qualified GroupKind
+func Kind(kind string) schema.GroupKind {
+	return SchemeGroupVersion.WithKind(kind).GroupKind()
+}
+
+// Resource takes an unqualified resource and returns a Group qualified GroupResource
 func Resource(resource string) schema.GroupResource {
 	return SchemeGroupVersion.WithResource(resource).GroupResource()
 }

@@ -8,4 +8,4 @@ spec:
   names:
     kind: OrgNamespaceConfiguration
     plural: orgnamespaceconfigurations
-  scope: Cluster
+  scope: Namespaced

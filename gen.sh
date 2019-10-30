@@ -1,5 +1,5 @@
 # ROOT_PACKAGE :: the package (relative to $GOPATH/src) that is the target for code generation
-ROOT_PACKAGE="ars-proto"
+ROOT_PACKAGE="ars-crd"
 # CUSTOM_RESOURCE_NAME :: the name of the custom resource that we're generating client code for
 CUSTOM_RESOURCE_NAME="OrgNamespaceConfiguration"
 # CUSTOM_RESOURCE_VERSION :: the version of the resource

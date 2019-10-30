@@ -28,7 +28,7 @@ type OrgNamespaceConfiguration struct {
 // OrgNamespaceConfigurationSpec is the spec for a OrgNamespaceConfiguration resource
 type OrgNamespaceConfigurationSpec struct {
 	// this is where you would put your custom resource data
-	Config string
+	Config string `json:"config"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

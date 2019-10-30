@@ -84,6 +84,12 @@
   version = "v0.3.8"
 
 [[projects]]
+  name = "github.com/jeffail/gabs"
+  packages = ["."]
+  revision = "e91873001ff8fb4c5f2c60406d81c50991d1924c"
+  version = "v2.1.0"
+
+[[projects]]
   name = "github.com/json-iterator/go"
   packages = ["."]
   revision = "03217c3e97663914aec3faafde50d081f197a0a2"
@@ -468,23 +474,6 @@
 
 [[projects]]
   branch = "master"
-  name = "k8s.io/sample-controller"
-  packages = [
-    "pkg/apis/samplecontroller",
-    "pkg/apis/samplecontroller/v1alpha1",
-    "pkg/generated/clientset/versioned",
-    "pkg/generated/clientset/versioned/scheme",
-    "pkg/generated/clientset/versioned/typed/samplecontroller/v1alpha1",
-    "pkg/generated/informers/externalversions",
-    "pkg/generated/informers/externalversions/internalinterfaces",
-    "pkg/generated/informers/externalversions/samplecontroller",
-    "pkg/generated/informers/externalversions/samplecontroller/v1alpha1",
-    "pkg/generated/listers/samplecontroller/v1alpha1"
-  ]
-  revision = "d7b8b8302943f04f89d9aaa5b149bcf55b435462"
-
-[[projects]]
-  branch = "master"
   name = "k8s.io/utils"
   packages = [
     "buffer",
@@ -502,6 +491,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c6f267a22866b0161b72a6171bc6920533bbe19eacdd8526c10b1344684e01e0"
+  inputs-digest = "5f361663b59117c9b9a1ec0134c9296ce50aa1643360b9d61ae15051a5007e05"
   solver-name = "gps-cdcl"
   solver-version = 1
